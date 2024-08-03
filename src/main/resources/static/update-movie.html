@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Update Movie</title>
+		<style>
+			body{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+				padding: 0;
+				height: 100vh;
+				/* background-image: linear-gradient(180deg, #242424, #404040); */
+				background-image: url("background.jpg");
+				background-size: cover;
+			}
+			form{
+				background-color: rgba(0, 0, 0, 0.5);
+				padding: 40px;
+				border-radius: 10px;
+			}
+			form h2{
+				text-align: center;
+				color: white;
+			}
+			input[type="text"],
+			input[type="password"]{
+				width: 400px;
+				height: 30px;
+				font-size: 15px;
+				background-color: rgba(255, 255, 255, 0.1);
+				color: white;
+			}
+			input[type="submit"]{
+				font-size: 20px;
+				width: 80px;
+				transition-duration: 0.2s;
+			}
+			
+			input[type="submit"]:hover{
+				background-color: green;
+				color: white;
+			}
+			a{
+				font-size: 20px;
+				text-decoration: none;
+				color: skyblue;
+			}
+		</style>
+	</head>
+	<body>
+	
+		<form action="/admin/add" method="post">
+			<h2>Movie Info: </h2>
+			<input type="number" name="mid" required="required" placeholder="Movie Id">
+			<br><br>
+			<input type="text" name="name" required="required" placeholder="Movie name">
+			<br><br>
+			<input type="text" name="genre" required="required" placeholder="Genre">
+			<br><br>
+			<input type="text" name="release" required="required" placeholder="Release Date">
+			<br><br>
+			<input type="text" name="time" required="required" placeholder="Time">
+			<br><br>
+			<input type="submit" value="Update">
+			<br><br>
+		</form>
+	
+	</body>
+</html>

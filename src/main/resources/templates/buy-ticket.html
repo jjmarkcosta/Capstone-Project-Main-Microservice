@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Buy your Tickets</title>
+<style>
+	body{
+                background-color: black;
+                margin: 0;
+            }
+
+            h1{
+                color: gold;
+                text-align: center;
+            }
+
+            form{
+                background-color: rgb(40, 40, 40);
+                margin: 5% auto;
+                padding: 30px;
+                width: 30%;
+                border-radius: 15px;
+                transition-duration: 0.3s;
+                animation-name: bodyanimation;
+                animation-duration: 20s;
+                animation-iteration-count: infinite;
+            }
+
+            form label{
+                color: gold;
+                font-size: 25px;
+            }
+            form input, select{
+                background-color: black;
+                border: none;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                color: gold;
+                border: 1px solid gold;
+                border-radius: 10px;
+                height: 30px;
+                /*width: 300px;*/
+                width: 90%;
+                padding-left: 10px;
+            }
+
+            form input[type="submit"], form input[type="reset"]{
+                border: none;
+                border-radius: 5px;
+                background-color: gold;
+                color: black;
+                width: 100px;
+                margin-right: 10px;
+            }
+            form input[type="submit"]:hover, form input[type="reset"]:hover{
+                border: 1px solid black;
+            }
+
+            @keyframes bodyanimation{
+                /*from {background-color: rgb(40, 40, 40);}
+                to{background-color: black}*/
+                0% {background-color: rgb(40, 40, 40)}
+                50% {background-color: black;}
+                100% {background-color: rgb(40, 40, 40)}
+            }
+</style>
+</head>
+<body>
+    <h1>Buy Movie Ticket</h1>
+    <form action="/save-purchases" method="post">
+        <label for="customerName">Your Name:</label>
+        <br>
+        <input type="text" name="customerName" required />
+        <br>
+        <label for="movieName">Movie Name:</label>
+        <br>
+        <select name="movieName" id="movieName" required>
+            <option value="">Choose a movie</option>
+            <option th:each="movie : ${movies}" 
+                    th:value="${movie.name}" 
+                    th:text="${movie.name}">
+            </option>
+        </select>
+        <br>
+        <label for="ticketNumber">Number of Tickets:</label>
+        <br>
+        <input type="number" name="ticketNumber" required value="1"/>
+        <br>
+        <label for="customerEmail">Your E-mail:</label>
+        <br>
+        <input type="email" name="customerEmail" required />
+        <br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>

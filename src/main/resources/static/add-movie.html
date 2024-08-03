@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Add Movie</title>
+		<style>
+			body{
+                background-color: black;
+                margin: 0;
+            }
+
+            h1{
+                color: gold;
+                text-align: center;
+            }
+
+            form{
+                background-color: rgb(40, 40, 40);
+                margin: 5% auto;
+                padding: 30px;
+                width: 30%;
+                border-radius: 15px;
+                transition-duration: 0.3s;
+            }
+
+            form label{
+                color: gold;
+                font-size: 25px;
+            }
+            form input, select{
+                background-color: black;
+                border: none;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                color: gold;
+                border: 1px solid gold;
+                border-radius: 10px;
+                height: 30px;
+                /*width: 300px;*/
+                width: 90%;
+                padding-left: 10px;
+            }
+
+            form input[type="submit"], form input[type="reset"]{
+                border: none;
+                border-radius: 5px;
+                background-color: gold;
+                color: black;
+                width: 100px;
+                margin-right: 10px;
+            }
+            form input[type="submit"]:hover, form input[type="reset"]:hover{
+                border: 1px solid black;
+            }
+
+            form a{
+                text-decoration: none;
+                color: gold;
+                font-size: 20px;
+                transition-duration: 0.2s;
+            }
+
+            form a:hover{
+                color: green;
+            }
+
+            form a:active{
+                color: blue;
+            }
+		</style>
+	</head>
+	<body>
+		<h1>Enter Movie details</h1>
+        <form action="/admin/add" method="post">
+            <label for="name">Movie name:</label>
+            <br>
+            <input type="text" name="name" required />
+            <br>
+            <label for="genre">Genre:</label>
+            <br>
+            <input type="text" name="genre" required />
+            <br>
+            <label for="release">Release Date:</label>
+            <br>
+            <input type="text" name="release" required />
+            <br>
+            <label for="time">Show time:</label>
+            <br>
+            <input type="text" name="time" required />
+            <br>
+            <input type="submit" value="Create">
+        </form>
+	</body>
+</html>

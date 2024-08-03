@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Login</title>
+		<style>
+			body{
+                background-color: black;
+                margin: 0;
+            }
+
+            h1{
+                color: gold;
+                text-align: center;
+            }
+
+            form{
+                background-color: rgb(40, 40, 40);
+                margin: 5% auto;
+                padding: 30px;
+                width: 30%;
+                border-radius: 15px;
+                transition-duration: 0.3s;
+            }
+
+            form label{
+                color: gold;
+                font-size: 25px;
+            }
+            form input, select{
+                background-color: black;
+                border: none;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                color: gold;
+                border: 1px solid gold;
+                border-radius: 10px;
+                height: 30px;
+                /*width: 300px;*/
+                width: 90%;
+                padding-left: 10px;
+            }
+
+            form input[type="submit"], form input[type="reset"]{
+                border: none;
+                border-radius: 5px;
+                background-color: gold;
+                color: black;
+                width: 100px;
+                margin-right: 10px;
+            }
+            form input[type="submit"]:hover, form input[type="reset"]:hover{
+                border: 1px solid black;
+            }
+
+            form a{
+                text-decoration: none;
+                color: gold;
+                font-size: 20px;
+                transition-duration: 0.2s;
+            }
+
+            form a:hover{
+                color: green;
+            }
+
+            form a:active{
+                color: blue;
+            }
+		</style>
+	</head>
+	<body>
+		<h1>Sign-in with your credentials</h1>
+        <form action="/app/validate" method="post">
+            <label for="username">Username:</label>
+            <br>
+            <input type="text" name="username" required />
+            <br>
+            <label for="password">Password:</label>
+            <br>
+            <input type="password" name="password" required />
+            <input type="submit" value="Log-in">
+            <br><br>
+            <a href="user.html">New User? Create an account here</a>
+        </form>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Movies</title>
+<style>
+body {
+	background-color: black;
+	color: white;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	border-collapse: collapse;
+	font-size: 20px;
+	width: 100%;
+}
+
+th{
+	font-size: 40px;
+}
+
+th, td {
+	/* border: 2px solid black; */
+	padding: 30px 10px;
+}
+
+tr {
+	border-bottom: 2px solid black;
+	transition-duration: 0.5s;
+}
+
+tr:hover {
+	color: gold;
+	background-color: rgba(20,20,20,1);
+}
+</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Genre</th>
+			<th>Release</th>
+			<th>Time</th>
+		</tr>
+		<tr th:each="movie : ${movies}">
+			<td th:text="${movie.mid}">Movie ID</td>
+			<td th:text="${movie.name}">Movie Name</td>
+			<td th:text="${movie.genre}">Movie Genre</td>
+			<td th:text="${movie.releaseDate}">Movie Release</td>
+			<td th:text="${movie.showTime}">Movie Time</td>
+		</tr>
+	</table>
+
+</body>
+</html>
